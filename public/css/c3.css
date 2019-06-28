@@ -1,0 +1,350 @@
+.container-fluid-custom {
+    padding: 20px;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+#search-table-result {
+    padding: 0 !important;
+}
+
+#search-table-result .row {
+    margin: 0 !important;
+}
+
+.c3-img {
+    width: 100% !important;
+    height: 24% !important;
+    border-radius: 5px;
+    margin-bottom: 6px;
+
+
+
+    -webkit-filter: brightness(0.70);
+    filter: brightness(0.70);
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 3px solid !important;
+    font-size: 16px;
+
+}
+
+a.nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    font-size: 16px;
+
+}
+
+.nav-link:hover {
+    border: transparent !important;
+}
+
+a {
+    text-decoration: none;
+    color: #999999;
+
+}
+
+.block-center {
+    height: 100%;
+    margin-left: 0px;
+}
+
+.c3-form {
+    background-color: white;
+    border: 1px solid #494949;
+    border-radius: 5px;
+    padding: 10px 10px !important;
+}
+
+#date {
+    color: #999999;
+    font-weight: lighter;
+    font-size: 16px;
+}
+#admin-name{
+    
+    font-size: 18px !important;
+}
+
+
+.block-right {
+    /* margin-left: 10px;*/
+    height: 100%;
+
+}
+
+#name-ad {
+
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 11% !important;
+}
+
+.name-ad-info {
+    position: absolute;
+    width: 100%;
+    top: 15%;
+    left: 5%;
+}
+.icon-change-date{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    left: 90%;
+    font-size: 30px;
+    z-index: 10 !important;
+}
+
+
+#revenue {
+    padding-bottom: 50% !important;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#chart_col {
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    width: 99%;
+}
+
+#num-of-booking {
+    padding-bottom: 50% !important;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#chart_line {
+    position: absolute;
+    left: 0.5%;
+    top: 15%;
+    width: 99%;
+}
+
+#user-visit-book,
+#bus-type {
+    padding-bottom: 30% !important;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+#bus-route {
+    padding-bottom: 46% !important;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.info-chart {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    width: 100%;
+    z-index: 1000;
+}
+
+#chart_donut,
+#chart_bustype {
+    position: absolute;
+    height: 130% !important;
+    width: 70% !important;
+    margin-top: -7%;
+    z-index: 1000;
+}
+
+#refresh{
+    z-index: 10000 !important;
+}
+
+#chart_busroute {
+    width: 113%;
+    height: 90%;
+    margin: 0 !important;
+    margin-left: -5% !important;
+    position: absolute;
+}
+
+#paddingbot {
+    padding-bottom: 5%;
+
+}
+
+#donut-value {
+    position: absolute;
+    left: 22%;
+    top: 39%;
+    font-size: 26px;
+    color: #D70303;
+    font-weight: bold;
+}
+
+#bus-type-value {
+    position: absolute;
+    left: 18%;
+    top: 40%;
+    font-size: 22px;
+    color: #56c568;
+
+}
+
+.box {
+    position: relative;
+
+}
+
+.box .text {
+    color: white;
+    position: absolute;
+    left: 5%;
+    bottom: -5px;
+}
+
+#num-signup,
+#num-sale,
+#num-visit,
+#num-revenue {
+    font-size: 24px;
+}
+
+.col-lg-2 a:hover {
+    -webkit-filter: blur(1px);
+    /* Safari 6.0 - 9.0 */
+    filter: blur(1px);
+
+    -webkit-filter: saturate(7);
+    filter: saturate(7);
+
+}
+
+.title-donut {
+    font-size: 18px;
+    margin-left: 50%;
+}
+
+.title-chart {
+    font-size: 18px;
+    border-bottom: 1px solid #494949;
+    position: absolute;
+    width: 95%;
+}
+
+.subtitle-donutC,
+.btn-primaryC {
+    font-size: 14px;
+    margin-left: 50%;
+    color: #999999;
+    margin-bottom: 3px;
+}
+
+.btn-primaryC {
+    font-size: 12px ;
+    color: white ;
+    background-color: #D70303;
+    padding-top: 2px ;
+    padding-bottom: 2px ;
+}
+
+.btn-primaryC:hover{
+    color:white;
+}
+
+.c3-my-select {
+    outline: none !important;
+    color: #D70303 !important;
+    border: #D70303 solid 1px !important;
+    background: none;
+    width: 170px !important;
+    height: 2.5rem !important;
+    padding: 4px 8px !important;
+    border-radius: 5px !important;
+}
+
+.c3-my-select:focus {
+    outline: none !important;
+    border: inherit solid 1px !important;
+    background: #D70303 !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+.c3-my-select .c3-my-option {
+    background-color: white !important;
+    color: #494949 !important;
+    height: 40px !important;
+    line-height: 2rem !important;
+    border: #D70303 solid 1px !important;
+    outline-color: #D70303 !important;
+    padding: 4px 6px !important;
+}
+
+.c3-my-select .c3-my-option:hover {
+    box-shadow: none !important;
+    background-color: white !important;
+    color: #D70303 !important;
+}
+
+select.decorated option:hover {
+    box-shadow: none;
+}
+
+select.form-control {
+    height: auto !important;
+}
+
+.datepicker {
+    z-index: 1151 !important;
+}
+
+.subtitle-donutC,
+.btn-primaryC {
+    font-size: 14px;
+    margin-left: 50%;
+    color: #999999;
+    margin-bottom: 3px;
+}
+
+.btn-primaryC {
+    font-size: 12px ;
+    color: white ;
+    background-color: #D70303;
+    padding-top: 2px ;
+    padding-bottom: 2px ;
+}
+
+.btn-primaryC:hover{
+    color:white;
+}
+
+#title-date-choose{
+    font-size: 20px;
+}
+
+#ok-btn{
+    margin-top: 5% !important;
+    margin-right: 12% !important;
+    border-radius: 5px !important;
+    text-align: center !important;
+}
+#datetoID,#datefromID{
+    font-size: 16px !important;
+}
+
+#fromInputautocomplete-list, #toInputautocomplete-list {
+    top:100% !important;
+}

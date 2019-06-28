@@ -1,0 +1,46 @@
+{
+  "name": "xebooking",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "set HTTPS=true&&node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.16.1",
+    "express-validator": "^5.3.1",
+    "fs": "0.0.1-security",
+    "handlebars": "^4.1.2",
+    "jquery": "^3.4.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.1",
+    "node-excel-export": "^1.4.4",
+    "nodemailer": "^6.2.1",
+    "passport": "^0.4.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "paypal-rest-sdk": "^1.8.1",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "popper.js": "^1.15.0",
+    "pretty-checkbox": "^3.0.3",
+    "sequelize": "^5.8.9",
+    "sequelize-cli": "^5.5.0",
+    "sharp": "^0.22.1"
+  },
+  "devDependencies": {
+    "ws": "3.3.2"
+  }
+}

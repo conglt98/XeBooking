@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/a2.css">
+<link rel="stylesheet" href="/css/a1.css">
+
+<!-- font awsome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="container col-5 border p-5 mt-5 mb-5">
+    <h1 style="color: #D70303">Edit voucher ID {{voucherId}}</h1>
+    <div id="station-container"
+        data-station="{{#each stations}}{{id}}-Minute move: {{soPhutDiChuyen}}-Bus route: {{xuatphat.ten}}-{{ketthuc.ten}};{{/each}}"
+        hidden></div>
+
+    {{#if success}}
+    <div class="form-control-feedback alert alert-success ">
+        <span class="align-middle">
+            {{success}}
+        </span>
+    </div>
+    {{/if}}
+
+    {{#if error}}
+    <div class="form-control-feedback alert alert-danger ">
+        <span class="align-middle">
+            {{error}}
+        </span>
+    </div>
+    {{/if}}
+
+    <div class="form-group">
+        <label>Voucher image:</label>
+        <img src="{{result.imagePath}}" alt="noImage" width="460" height="280">
+    </div>
+    <button class="cursor-pointer btn btn-light" data-toggle="modal" data-target="#yesnoModal">Change
+        image</button>
+    <hr>
+
+    <form method="POST" action="/users/voucherdata/edit/{{voucherId}}/put?_method=PUT">
+        <div class="form-group">
+            <label>Voucher name:</label>
+            <input value="{{result.maKhuyenMai}}" type="text"
+                class="form-control-plaintext control-inline my-inpyt-text" id="voucher"
+                placeholder="Enter name voucher" name="voucher" required />
+        </div>
+        <div class="form-group">
+            <label>Bus route ID:</label>
+            <input value="{{result.TuyenId}}" type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                autocomplete="off" id="fromInputM" placeholder="Enter route id" name="busrouteid" required>
+        </div>
+
+        <div class="form-group">
+            <label>Time start:</label>
+            <div class="form-group">
+                <input value="{{result.ngayBatDau}}" name="timestart" data-timepicker="true"
+                    placeholder="Input time start" id="timestart" type="text" class="datepicker-here form-control"
+                    data-language='en' data-multiple-dates="1" data-position='top left' required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Time end:</label>
+            <div class="form-group">
+                <input value="{{result.ngayKetThuc}}" name="timeend" data-timepicker="true" placeholder="Input time end"
+                    id="timeend" type="text" class="datepicker-here form-control" data-language='en'
+                    data-multiple-dates="1" data-position='top left' required />
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Discount:</label>
+            <input value="{{result.phanTram}}" type="number" class="form-control-plaintext control-inline my-inpyt-text"
+                autocomplete="off" id="toInputM" placeholder="Enter discount (%)" name="discount" required>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/users/voucherdata" class="btn btn-secondary">Cancel</a>
+    </form>
+
+</div>
+
+<!-- YesnoModal -->
+<div class="modal fade" id="yesnoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Change image voucher</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/users/voucherdata/edit/{{voucherId}}/upload" enctype="multipart/form-data" method="POST">
+                <div class="modal-body">
+                    <!--  SINGLE FILE -->
+
+                    <input type="file" name="myFile" />
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-dark" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link href="/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+<script src="/dist/js/datepicker.min.js"></script>
+<!-- Include English language -->
+<script src="/dist/js/i18n/datepicker.en.js"></script>
+
+<script src="/js/handlebars-v4.1.2.js"></script>
+<script src="/js/a1.js"></script>
+<script src="/js/create.js"></script>

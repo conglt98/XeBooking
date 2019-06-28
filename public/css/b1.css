@@ -1,0 +1,187 @@
+.logo-login {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 20%;
+}
+
+.b1-form {
+
+    background-color: white;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    padding: 20px 10px !important;
+}
+
+.b1-title-left {
+    text-align: center;
+    font-size: 24px !important;
+    float: left;
+    margin-left: 20%;
+    color: #999999;
+}
+
+.b1-title-right {
+    text-align: center;
+    font-size: 24px !important;
+    float: right;
+    margin-right: 25%;
+
+}
+
+.b1-line {
+    display: block;
+    margin-top: 36px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+    height: 2%;
+    opacity: 50%;
+    border-bottom: 1px solid #999999;
+    position: relative;
+}
+
+.b1-current {
+    float: right;
+    margin-right: 27px;
+    width: 45%;
+    height: 2%;
+    border-bottom: 3px solid #494949;
+    position: relative;
+}
+
+
+input[type=text],
+input[type=password] {
+    width: 95%;
+    height: 55px;
+    padding: 12px 50px;
+    margin: 8px 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+input[type=text]{
+
+    background: url('../img//icon/baseline-person-24px.svg') no-repeat scroll 10px;
+}
+
+input[type=password]{
+    background: url('../img//icon/baseline-lock-24px.svg') no-repeat scroll 10px;
+
+}
+
+#email{
+    background: url('../img//icon/baseline-email-24px.svg') no-repeat scroll 10px; 
+}
+
+.container {
+    padding: 16px;
+}
+
+#remember {
+    margin-left: 12px;
+}
+
+
+
+span.psw a {
+    float: right;
+    color: #207bbf !important;
+    margin-right: 10px;
+}
+
+.btn-custom {
+    margin-top: 15px;
+    margin-right: 10px;
+    float: right;
+    height: 55px;
+    width: 150px;
+    font-size: x-large;
+}
+
+.subline-left {
+    margin-left: 10px;
+    float: left;
+    margin-top: 15%;
+    display: block;
+    width: 30%;
+    height: 1%;
+    opacity: 50%;
+    border-bottom: 1px solid #999999;
+    position: absolute;
+}
+
+.subline-right {
+    float: right;
+    margin-top: 15%;
+    margin-left: 59%;
+    display: block;
+    width: 28%;
+    height: 1%;
+    opacity: 50%;
+    border-bottom: 1px solid #999999;
+    position: absolute;
+}
+
+#text-connect {
+    position: absolute;
+    padding-top: 13%;
+    margin-left: 35%;
+
+    
+    color: #999999;
+}
+
+#icon-fb {
+    width: 55% !important;
+    height: auto;
+}
+
+#icon-gg {
+    width: 45% !important;
+    height: auto;
+}
+
+.icon-left {
+    float: left;
+    display: block;
+    position: relative;
+    margin-left: 35%;
+}
+
+.icon-right {
+    float: left;
+    display: block;
+    position: relative;
+    margin-left: 18%;
+}
+
+
+
+.line-vertical {
+    margin-top: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    width:4%;
+    height: 80%;
+    opacity: 50%;
+    border-left: 1px solid #999999;
+    position: relative;
+}
+
+a{
+    color: #494949 !important;  
+}
+
+a:hover{
+    text-decoration: none;
+}

@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/a2.css">
+<link rel="stylesheet" href="/css/a1.css">
+<link rel="stylesheet" href="/css/c3.css">
+<link rel="stylesheet" href="/css/c1.css">
+<!-- font awsome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+
+<div class="container ">
+    <div class="row justify-content-center align-content-center">
+        <div class="col-6">
+            <nav>
+                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" href="/masterdata">Master Data</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" href="/transaction">Transaction</a>
+                    <a class="nav-item nav-link " id="nav-contact-tab" href="/admin">Report</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="nav-data" role="tabpanel">
+        <div class="container-fluid container-fluid-custom ">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-12">
+                    <div class="c3-form">
+                        <h4>TOOL</h4>
+                        <div class="tools">
+                            <a href="/users/masterdata/create" id="create" class="btn btn-custom">Create</a>
+                            <a href="/users/masterdata/export" id="import" class="btn btn-custom">Export</a>
+                            <br>
+                            
+                        </div>
+                    </div>
+                    <div id="station-container" data-station="{{#each stations}}{{ten}}-{{id}};{{/each}}" hidden></div>
+                    <form action="" method="get">
+                        <div class="c3-form">
+                            <h4>FILTER</h4>
+                            <div class="btn-group" id="btn-group-dropdown">
+                                <button type="button" id="btn-dropdown" class="btn btn-danger">Departure database</button>
+                                <button type="button" id="toggle"
+                                    class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class=" dropdown-item" href="/users/masterdata">Departure database</a>
+                                    <div class="dropdown-divider"></div>
+                                
+                                    <a class="dropdown-item" href="/users/voucherdata">Voucher database</a>
+                
+                                    
+                                </div>
+                            </div>
+
+                            <div class="bus-route-search">
+                                <h5>Bus route</h5>
+                                <div class="row row-custom">
+                                    <div class="col-5">
+                                        <input type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                                            placeholder="From" autocomplete="off" name="from" id="fromInputM">
+                                    </div>
+                                    <div class="col-2" id="icon-trans">
+                                        <i id="swapbutton" style="margin:auto 1px" class="fas fa-exchange-alt"
+                                            aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-5">
+                                        <input type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                                            placeholder="To" id="toInputM" autocomplete="off" name="to">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bus-route-search">
+                                <h5>Time</h5>
+                                <div class="row row-custom">
+                                    <div class="col-6">
+                                        <div class="input-date">
+                                            <input autocomplete="off" name="departure_min" placeholder="From"
+                                                id="searchform-departureday" type="text"
+                                                class="datepicker-here form-control" data-language='en'
+                                                data-multiple-dates="3" data-multiple-dates-separator=", "
+                                                data-position='top left' />
+                                            <i class="far fa-calendar-alt icon-date"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <div class="input-date">
+                                            <input name="departure_max" autocomplete="off" placeholder="To"
+                                                id="searchform-returnday" type="text"
+                                                class="datepicker-here form-control" data-language='en'
+                                                data-multiple-dates="3" data-multiple-dates-separator=", "
+                                                data-position='top left' />
+                                            <i class="far fa-calendar-alt icon-date"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bus-route-search">
+                                <h5>License Plate</h5>
+                                <div class="row row-custom">
+                                    <div class="col-10">
+                                        <input name="palaceLiscene" type="text" id="bus-id"
+                                            placeholder="Example: 59-B1">
+                                    </div>
+
+                                    <div class="col-2" id="icon-search">
+                                        <button type="submit">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-12">
+                    <div class="c3-form">
+                        <div id="masterData-container">
+                            {{> masterDataPartial}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="/js/handlebars-v4.1.2.js"></script>
+
+<script src="/js/nav-admin-input.js"></script>
+
+<link href="/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+<script src="/dist/js/datepicker.min.js"></script>
+<!-- Include English language -->
+<script src="/dist/js/i18n/datepicker.en.js"></script>
+
+<script src="/js/masterdata.js"></script>

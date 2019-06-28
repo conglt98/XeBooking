@@ -1,0 +1,43 @@
+    <nav class="navbar sticky-top  navbar-light bg-light" id="my-navbar">
+            <a class="navbar-brand" href="/"><img id="homeLogo" src="/img/Logo/black.png" alt=""></a>
+            <div class="my-navbar-collapse float-right"  id=" ">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0 flex-row">
+                    {{!-- <li class="nav-item d-flex align-content-center justify-content-center align-items-center">
+                        <div class="icon-container">
+                            <a id="search-toggle" class="nav-link" href="#">
+                                <i class="icon fas fa-search" style="font-size:16px"></i></a>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li id="search-bar" class="nav-item align-items-center" style="display: none">
+                            <input type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                            placeholder="Searching">
+                    </li>
+                     --}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="/profile">
+                            <img id="user-avatar" class="position-absolute p-auto" style="max-height: 100%; transform: translateY(-50%); top:50%" src={{{user.imagePath}}}>
+                            <p style="display: inline; padding-left:46px" id="username-navbar">{{user.name}}</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item p-auto">
+                            <button type="button" class="btn dropdown-toggle align-items-center" data-toggle="dropdown" style="padding-top:8px !important; width:32px !important;">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right position-absolute">
+                                <a class="dropdown-item" href="/profile">Profile</a>
+                                <a class="dropdown-item" href="/users/changepass">Change password</a>
+                                <a class="dropdown-item" href="#">Help</a>
+                                <a class="dropdown-item" href="/users/logout">Log out</a>
+                            </div>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+            </div>
+        </nav>

@@ -1,0 +1,744 @@
+<link rel="stylesheet" href="css/a2.css">
+<div id="chuyen{{chuyen.id}}Div">
+<div class="row table-content">
+    <div class="licensePlateData col-2">{{Xe.bienso}}</div>
+    <div class="typeData col-2">{{Xe.LoaiXe.ten}}</div>
+    <div class="departureData col-2">{{getDate chuyen.ngayGioKhoiHanh}}</div>
+    <div class="arrivalData col-2">{{getArrival1 chuyen.ngayGioKhoiHanh Tuyen.soPhutDiChuyen}}</div>
+    <div class="priceData col-2">
+        
+        {{#if hasVoucher}}
+        ${{caculateNewPrice chuyen.Tuyen.KhuyenMais.0.phanTram chuyen.gia}}
+        <p class="d-inline small text-primary"><i class="fa fa-arrow-down" aria-hidden="true"></i>{{chuyen.Tuyen.KhuyenMais.0.phanTram}}%</p>
+        {{else}}
+            {{#if (HasVoucher chuyen)}}
+            ${{caculateNewPrice chuyen.Tuyen.KhuyenMais.0.phanTram chuyen.gia}}
+            <p class="d-inline small text-primary"><i class="fa fa-arrow-down" aria-hidden="true"></i>{{chuyen.Tuyen.KhuyenMais.0.phanTram}}%</p>
+            {{else}}
+            ${{getPrice chuyen}}
+            {{/if}}
+        {{/if}}
+    </div>
+    <div class="col-2">
+        <a name="" id="openCollapse{{chuyen.id}}" class="btn btn-outline-secondary" href="#" role="button" data-toggle="collapse" data-target="#collapse{{@index}}"  >Select Seat</a>
+    </div>
+</div>
+<div id="collapse{{@index}}" class="row container table-content collapse">
+    {{#if (checkSeater Xe.LoaiXe.ten)}}
+    <div id="div{{chuyen.id}}" class="col-lg-6 busDiv mt-5" data-seats="{{list transactions chuyen.id}}">
+        <div id="sleeper-div-lower">
+            <p>FRONT</p>
+            <table id="seater-table">
+                <tr class="mb-4">
+                    <td>
+                        <div id="1" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="4" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="7" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="10" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="13" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="16" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="19" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="21" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="24" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="pb-4 pt-4">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div id="25" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="2" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="5" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="8"  class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="11"  class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="14" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="17" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="20" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="23" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="27"  class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="3"  class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="6" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="9"  class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="12" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="15" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="18" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="21" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="24" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="28" class="seater">
+                            <div class="seater-rec2"></div>
+                            <div class="seater-rec1"></div>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <table><td>
+                            <div class="seater sleeper-disabled">
+                                <div class="seater-rec2"></div>
+                                <div class="seater-rec1"></div>
+                            </div>
+                        </td>
+                        <td  class="pl-2">Occupied</td>
+                    </table>
+                </div>
+                <div class="col-4">
+                        <table><td>
+                                <div style="cursor: default;" class="seater non-toggle">
+                                    <div class="seater-rec2"></div>
+                                    <div class="seater-rec1"></div>
+                                </div>
+                            </td>
+                            <td class="pl-2">Available</td>
+                        </table>
+                </div>
+                <div class="col-4 ">
+                        <table><td>
+                                <div style="cursor: default;" class="seater  non-toggle sleeper-active">
+                                    <div class="seater-rec2"></div>
+                                    <div class="seater-rec1"></div>
+                                </div>
+                            </td>
+                            <td  class="pl-2">Selected</td>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {{else}}
+    <div id="div{{chuyen.id}}" class="col-lg-6 busDiv mt-0" data-seats="{{list transactions chuyen.id}}">
+            <p id="title">Upper</p>
+            <div id="sleeper-div-lower">
+                <p>FRONT</p>
+                <table id="sleeper-table">
+                    <tr>
+                        <td>
+                            <div id="1A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <a id="4A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </a>
+                        </td>
+                        <td>
+                            <div id="7A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="10A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="13A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="16A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="19A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="20A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="2A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="5A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="8A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="11A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="14A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="17A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="21A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="22A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="3A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="6A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="9A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="12A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="15A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="18A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="23A" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div><br>
+            <p id="title">Lower</p>
+            <div id="sleeper-div-upper">
+                <p>FRONT</p>
+                <table id="sleeper-table">
+                    <tr>
+                        <td>
+                            <div id="1B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <a id="4B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </a>
+                        </td>
+                        <td>
+                            <div id="7B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="10B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="13B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="16B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="19B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="20B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="2B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="5B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="8B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="11B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="14B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="17B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="21B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="22B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="3B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="6B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="9B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="12B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="15B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="18B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="23B" class="sleeper">
+                                <div class="sleeper-rec"></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 pl-0">
+                        <table>
+                            <td>
+                                <div class="sleeper sleeper-disabled">
+                                    <div class="sleeper-rec"></div>
+                                </div>
+                            </td>
+                            <td  class="pl-2">Occupied</td>
+                        </table>
+                    </div>
+                    <div class="col-4 pl-0">
+                            <table><td>
+                                    <div style="cursor: default;" class="sleeper non-toggle">
+                                        <div class="sleeper-rec"></div>
+                                    </div>
+                                </td>
+                                <td class="pl-2">Available</td>
+                            </table>
+                    </div>
+                    <div class="col-4 pl-0">
+                            <table><td>
+                                    <div style="cursor: default;" class="sleeper sleeper-active non-toggle">
+                                        <div class="sleeper-rec"></div>
+                                    </div>
+                                </td>
+                                <td  class="pl-2">Selected</td>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+    <div id="ticket-info" class="container col-lg-6">
+
+        <div class="row pt-0">
+            <div class="col-4 text-left">
+                <p class="small m-0 p-0 label text-left">From</p>{{Tuyen.xuatphat.ten}}
+            </div>
+            <div class="col-2"></div>
+            <div class="col-4 text-right">
+                <p class="small m-0 p-0 label text-right">To</p>{{Tuyen.ketthuc.ten}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-left">
+                <p class="small m-0 p-0 label text-left">Departure</p>{{getTimeDeparture chuyen.ngayGioKhoiHanh}}
+            </div>
+            <div class="col-2"><i class="fas fa-arrow-right"></i></div>
+            <div class="col-4 text-right">
+                <p class="small m-0 p-0 label text-right">Arrival</p>{{getTimeArrival chuyen.ngayGioKhoiHanh Tuyen.soPhutDiChuyen}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-left">Seat(s)</div>
+            <div class="col-2"></div>
+            <div id="seats{{chuyen.id}}" class="div-seats col-4 text-right" ></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-4">Total</div>
+            <div class="col-2"></div>
+            <div id="total{{chuyen.id}}" data-price="{{#if hasVoucher}}${{caculateNewPrice chuyen.Tuyen.KhuyenMais.0.phanTram chuyen.gia}}{{else}}{{#if (HasVoucher chuyen)}}${{caculateNewPrice chuyen.Tuyen.KhuyenMais.0.phanTram chuyen.gia}}{{else}}{{getPrice chuyen}}{{/if}}{{/if}}" class="col-4">$0</div>
+        </div>
+        <div class="row">
+            <a style="display: none;"  id="continueBtn{{chuyen.id}}" data-id="{{chuyen.id}}" class="btn btn-primary m-auto continueBtnLoad" href="#" role="button" data-toggle="modal" data-target="#myModal{{chuyen.id}}" 
+                onclick="loadSeats(this, {{chuyen.id}}, {{isLoggedIn}})"> {{#if isLoggedIn}}Continue{{else}}Log in to continue{{/if}}</a>
+        </div>
+    </div>
+</div>
+    <hr>
+
+<div data-id="{{chuyen.id}}" class="modal fade" id="myModal{{chuyen.id}}">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+           
+        <!-- Modal Header -->
+        <div class="modal-header pb-0">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <ul class="nav nav-tabs d-flex align-content-center mb-3 text-center" style="margin: 2em 15%" role="tablist">
+                <li class="nav-item">
+                  <a id="ahome{{chuyen.id}}" class="nav-link a2-nav-link active" data-toggle="tab" href="#home{{chuyen.id}}">1. Passenger Information</a>
+                </li>
+                <li class="nav-item">
+                  <a id="amenu1{{chuyen.id}}" class="nav-link a2-nav-link disabled" data-toggle="tab" href="#menu1{{chuyen.id}}">2. Contact Details</a>
+                </li>
+                <li class="nav-item">
+                  <a id="amenu2{{chuyen.id}}" class="nav-link a2-nav-link disabled" data-toggle="tab" href="#menu2{{chuyen.id}}">3. Payment Details</a>
+                </li>
+              </ul>
+        <!-- Modal body -->
+            <div class="modal-body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <!-- Passenger Information -->
+                    <div id="home{{chuyen.id}}" class="container tab-pane active">
+                        <form id="formhome{{chuyen.id}}" action="javascript:click1({{chuyen.id}});">
+                            <div id="passengerDetailContainer{{chuyen.id}}" class="container pl-5 pr-5">
+                                {{> passengerDetail id=chuyen.id}}
+                            </div>
+                            <div class="container pl-5 pr-5">
+                                <div class="row text-right pl-5 pr-5">
+                                    <button type="submit" class="btn btn-primary ml-auto mr-3" id="a2-btn-step-1"
+                                        data-dismiss="">Continue</button>
+                                </div>
+                            </div>
+        
+                        </form>
+                    </div>
+                    <!-- Contact Details -->
+                    <div id="menu1{{chuyen.id}}" class="container tab-pane fade">
+                        <form id="formmenu1{{chuyen.id}}" action="javascript:click2({{chuyen.id}});">
+                            <div class="container d-flex flex-column">
+                                <div class="row big-label align-self-center mb-1 text-primary">Your ticket will be sent to these
+                                    details</div>
+                                <div class="row col-8 mb-1  align-self-center">
+                                    <label for="usr">Phone</label>
+                                    <input id="ticketPhone" type="tel" class="form-control" name="phone" placeholder="Phone"
+                                        required data-mask="999 999 9999" maxlength="12">
+                                </div>
+                                <div class="row col-8 mb-2  align-self-center">
+                                    <label for="usr">Email</label>
+                                    <input id="ticketEmail" type="email" class="form-control" name="email" placeholder="Email"
+                                        required>
+                                </div>
+                                <div class="row col-8 text-center mt-3 align-self-center custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="term" value="customEx" required>
+                                    <label class="custom-control-label" for="term">I agreed to the <a class="text-info"
+                                            href="/termsConditions" target="_blank">Terms and Conditions</a></label>
+                                </div>
+                            </div>
+                            <div class="container pl-5 pr-5">
+                                <div class="row text-right pl-5 pr-5">
+                                    <button onclick="getDataToSumary(this,{{chuyen.id}});" type="submit"
+                                        class="btn btn-primary ml-auto mr-3 mb-4" id="a2-btn-step-2"
+                                        data-dismiss="">Continue</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Payment Details -->
+                    <div id="menu2{{chuyen.id}}" class="container tab-pane fade">
+                        <h2 id="countDown{{chuyen.id}}" class="text-primary mb-4 text-center">10:00</h2>
+                        <div class="container">
+                            <div class="row  text-left">
+                                <div class="col-4 pl-5 pb-4">
+                                    <p class="label p-0 mt-2 mb-1 text-left">Full name</p>
+                                    <p class="mb-2" id="sumaryFullName"></p>
+                                    <p class="label p-0 mt-2 mb-1 text-left">Phone</p>
+                                    <p class="mb-2" id="sumaryPhone"></p>
+                                    <p class="label p-0 mt-2 mb-1 text-left">Email</p>
+                                    <p class="mb-2" id="sumaryEmail"></p>
+                                </div>
+                                <div id="" class="container col-lg-6">
+                                    <div class="row pt-0 d-flex justify-content-center">
+                                        <div class="col-4 text-left">
+                                            <p class="small m-0 p-0 label text-left">From</p>NewYork
+                                        </div>
+                                        <div class="col-2"></div>
+                                        <div class="col-4  text-right">
+                                            <p class="small m-0 p-0 label">To</p>Dallas
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-4 text-left ">
+                                            <p class="small m-0 p-0 label text-left">Departure</p>
+                                            {{getTimeDeparture chuyen.ngayGioKhoiHanh}}
+                                        </div>
+                                        <div class="col-2  text-right"><i class="fas fa-arrow-right"></i></div>
+                                        <div class="col-4   text-right">
+                                            <p class="small m-0 p-0 label text-right">Arrival</p>
+                                            {{getTimeArrival chuyen.ngayGioKhoiHanh Tuyen.soPhutDiChuyen}}
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 d-flex justify-content-center">
+                                        <div class="col-4 text-left">Seat(s)</div>
+                                        <div class="col-2  text-right"></div>
+                                        <div id="sumarrySeats" class="col-4  text-right"></div>
+                                    </div>
+                                    <hr>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-4 text-left">Total</div>
+                                        <div class="col-2"></div>
+                                        <div id="sumarryTotal" class="col-4 text-right"></div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary float-right mt-4" id="a2-btn-step-3" onclick="submitForm({{stringify chuyen}},{{user.id}},this)">Pay with PayPal</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="hiddenForm{{chuyen.id}}" class="hiddenForm" target="_blank" action="/payment" method="post">
+                </form>
+            </div>
+      </div>
+    </div>
+  </div>
+</div> 

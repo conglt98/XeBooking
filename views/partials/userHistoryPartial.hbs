@@ -1,0 +1,43 @@
+
+    <div class="container-fluid  text-center d-flex flex-column my-table b3-table" id="search-table-result">
+        <div class="row table-header big-label">
+                <div class="col-2"><a id="headertime" class="listHeader" href="?order=time_desc">Date</a></div>
+                <div class="col-2"><a id="headerlicensePlate" class="listHeader" href="?order=licensePlate_asc">License Plate</a></div>
+                <div class="col-2"><a id="headerdeparture" class="listHeader" href="?order=departure_asc">Departure</a></div>
+                <div class="col-2"><a id="headerinformation" class="listHeader" href="?order=information_asc">Information</a></div>
+                <div class="col-2"><a id="headerprice" class="listHeader" href="?order=price_asc">Price</a></div>
+                <div class="col-2" style="cursor:default">Status</div>
+        </div>
+            <div class="b3-content-containter">
+                        {{#each Transactions}}
+                        <div class="row table-content">
+                                <div class="timeData col-2  active-filter">{{getDay createdAt}}</div>
+                                <div class="licensePlateData col-2">{{Chuyen.Xe.bienso}}</div>
+                                <div class="departureData col-2">{{getDay Chuyen.ngayGioKhoiHanh}}</div>
+
+                                <div class="informationData col-2">{{Chuyen.Tuyen.xuatphat.ten}}-{{Chuyen.Tuyen.ketthuc.ten}}</div>
+                                <div class="priceData col-2">${{getTotal Chuyen.gia TransactionDetails KhuyenMai}}</div>
+                                <div class="col-2">
+                                        {{#if (checkStatus PaymentDetailId)}}
+                                        <a href="#" data-toggle="tooltip" title="Used" data-placement="right" style="cursor:default">
+                                                <i class="fas fa-check-circle" style="color:#56C568"></i>
+                                        </a>
+                                        {{else}}
+                                        <a href="#" data-toggle="tooltip" title="Unused" data-placement="right" style="cursor:default">
+                                                <i class="far fa-circle" style="color:#999"></i>
+                                        </a>
+                                        {{/if}}
+                                </div>
+                        </div>
+            
+                        <hr>
+                        {{/each}}
+            </div>
+
+
+                    <nav class="d-flex">
+                        {{#if hasPagination}}
+                            {{{paginate pagination}}}
+                        {{/if}}
+                    </nav>
+    </div>

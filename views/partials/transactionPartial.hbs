@@ -1,0 +1,261 @@
+<div class="container-fluid  text-center d-flex flex-column my-table h-100" id="search-table-result">
+        <div class="row table-header big-label">
+                <div class="col-2"><a id="headertime" class="listHeader" href="?order=time_desc">Time</a></div>
+                <div class="col-2 hidden"><a id="headerdeparture" class="listHeader"  href="?order=departure_asc">Departure</a></div>
+                <div class="col-2"><a id="headertransactionid" class="listHeader" href="?order=transactionid_asc">Transaction ID</a></div>
+                <div class="col-2"><a id="headeruserid" class="listHeader" href="?order=userid_asc">User ID</a></div>
+                <div class="col-2 hidden"><a id="headeruserphone" class="listHeader " href="?order=userphone_asc">User's phone</a></div>
+                <div class="col-2"><a id="headerbusid" class="listHeader" href="?order=busid_asc">Bus ID</a></div>
+                <div class="col-2 hidden"><a id="headerlicensePlate" class="listHeader " href="?order=licensePlate_asc">License Plate</a></div>
+                <div class="col-2"><a id="headerprice" class="listHeader" href="?order=price_asc">Total</a></div>
+                <div class="col-2"><a id="headerstatus" class="listHeader" href="?order=status_asc">Status</a></div>
+        </div>
+        <div class="b3-content-containter overflow-hidden">
+                {{#each Transactions}}
+
+                <div class="row table-content">
+                        <div class="timeData col-2 "><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">{{getDay createdAt}} {{getTime createdAt}}</a></div>
+                        <div class="departureData col-2 "hidden><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">{{getDay Chuyen.ngayGioKhoiHanh}} {{getTime Chuyen.ngayGioKhoiHanh}}</a></div>
+                        <div class="transactionidData col-2"><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">TRANSACTION-{{id}}</a></div>
+                        <div class="useridData col-2"><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">USER-{{User.id}}</a></div>
+                        <div class="userphoneData col-2 "hidden><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">{{sdt}}</a></div>
+                        <div class="busidData col-2"><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">{{Chuyen.Xe.id}}</a></div>
+                        <div class="licensePlateData  col-2"hidden><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">{{Chuyen.Xe.bienso}}</a></div>
+                                        
+                        <div class="priceData col-2"><a class="cursor-pointer" data-toggle="modal"
+                                        data-target="#modal{{@index}}">${{getTotal Chuyen.gia TransactionDetails KhuyenMai}}</a></div>
+                        <div class="statusData col-2">
+                                {{#if (checkStatus PaymentDetailId)}}
+                                <a href="#" data-toggle="tooltip" title="Used" data-placement="right"
+                                        style="cursor:default">
+                                        <i class="fas fa-check-circle" style="color:#56C568"></i>
+                                </a>
+                                {{else}}
+                                <a href="#" data-toggle="tooltip" title="Unused" data-placement="right"
+                                        style="cursor:default">
+                                        <i class="far fa-circle" style="color:#999"></i>
+                                </a>
+                                {{/if}}
+                        </div>
+                </div>
+
+                <hr class="m-2">
+                <div class="modal fade" id="modal{{@index}}">
+                        <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header pb-0">
+                                                <button type="button" class="close"
+                                                        data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <ul class="nav nav-tabs pb-4 pt-0 d-flex align-items-end mb-3" role="tablist"
+                                                style="margin:0 15%">
+                                                <li class="nav-item">
+                                                        <a id="ahome" class="nav-link a2-nav-link active"
+                                                                data-toggle="tab"
+                                                                href="#modalGeneral{{@index}}">General</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                        <a id="amenu1" class="nav-link a2-nav-link" data-toggle="tab"
+                                                                href="#modalPassengerContact{{@index}}">Passenger &
+                                                                Contact Details</a>
+                                                </li>
+                                        </ul>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body   pl-5 pb-5 pr-5">
+                                                <div class="tab-content text-left">
+                                                        <!-- General Information -->
+                                                        <div id="modalGeneral{{@index}}"
+                                                                class="container tab-pane active">
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Transaction ID</div>
+                                                                        <div class="col-lg-3 col-sm-6">{{id}}</div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">Time
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{getDay createdAt}} {{getTime createdAt}}</div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">Bus
+                                                                                ID</div>
+                                                                        <div class="col-lg-3 col-sm-6">{{Chuyen.Xe.LoaiXe.ten}} - {{Chuyen.Xe.id}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Departure
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{getDay Chuyen.ngayGioKhoiHanh}} {{getTime Chuyen.ngayGioKhoiHanh}}
+                                                                        </div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Arrival
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{getArrival Chuyen.ngayGioKhoiHanh Chuyen.Tuyen.soPhutDiChuyen}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Palace Liscene
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{Chuyen.Xe.bienso}}
+                                                                        </div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">Bus
+                                                                                Route
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                {{Chuyen.Tuyen.xuatphat.ten}}-{{Chuyen.Tuyen.ketthuc.ten}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Seats
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                {{getSeats TransactionDetails}}</div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">User
+                                                                                Id</div>
+                                                                        <div class="col-lg-3 col-sm-6">USER {{User.id}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Phone number
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{sdt}}</div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Email
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{email}}</div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Total Price</div>
+                                                                        <div class="col-lg-3 col-sm-6">{{getTotal Chuyen.gia TransactionDetails KhuyenMai}}</div>
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Status
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">
+                                                                                {{#if (checkStatus PaymentDetailId)}}
+                                                                                <a href="#" data-toggle="tooltip"
+                                                                                        title="Used"
+                                                                                        data-placement="right"
+                                                                                        style="cursor:default">
+                                                                                        <i class="fas fa-check-circle"
+                                                                                                style="color:#56C568"></i>
+                                                                                </a>
+                                                                                {{else}}
+                                                                                <a href="#" data-toggle="tooltip"
+                                                                                        title="Unused"
+                                                                                        data-placement="right"
+                                                                                        style="cursor:default">
+                                                                                        <i class="far fa-circle"
+                                                                                                style="color:#999"></i>
+                                                                                </a>
+                                                                                {{/if}}
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Payment ID
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-sm-6">{{PaymentDetail.PaymentId}}
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Payer ID
+                                                                        </div>
+                                                                        <div class="col-lg-6 col-sm-6">{{PaymentDetail.PayerId}}
+                                                                        </div>
+
+                                                                </div>
+                                                                <div class="row">
+
+                                                                        
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Payment Time
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{getDay createdAt}} {{getTime createdAt}}
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                        <!-- modalPassengerContact-->
+                                                        <div id="modalPassengerContact{{@index}}"
+                                                                class="container tab-pane">
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">User
+                                                                                Id
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">USER {{User.id}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Phone number
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{sdt}}</div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Email
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{email}}</div>
+                                                                </div>
+                                                                <hr>
+                                                                {{#each TransactionDetails}}
+                                                                <div class="row">
+                                                                        <div class="col-lg-5 col-sm-5">
+                                                                                Passenger {{inc @index}} | Seats
+                                                                                {{viTriGheDat}}
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">Full
+                                                                                Name
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{ten}}</div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">
+                                                                                Gender
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{GioiTinh.ten}}</div>
+
+                                                                        <div class="col-lg-3 col-sm-4 lighter-text">Year
+                                                                                Of Birth
+                                                                        </div>
+                                                                        <div class="col-lg-3 col-sm-6">{{namSinh}}
+                                                                        </div>
+                                                                </div>
+                                                                <hr>
+                                                                {{/each}}
+                                                        </div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+                {{/each}}
+        </div>
+
+
+                    <nav class="d-flex">
+                        {{#if hasPagination}}
+                            {{{paginate pagination}}}
+                        {{/if}}
+                    </nav>
+</div>

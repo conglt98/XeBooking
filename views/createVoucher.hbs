@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/a2.css">
+<link rel="stylesheet" href="/css/a1.css">
+
+<!-- font awsome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<div class="container col-5 border p-5 mt-5 mb-5">
+    <h1 style="color: #D70303">Create new voucher</h1>
+    <div id="station-container"
+        data-station="{{#each stations}}{{id}}-Minute move: {{soPhutDiChuyen}}-Bus route: {{xuatphat.ten}}-{{ketthuc.ten}};{{/each}}"
+        hidden></div>
+
+    {{#if error}}
+    <div class="form-control-feedback alert alert-danger ">
+        <span class="align-middle">
+            {{error}}
+        </span>
+    </div>
+    {{/if}}
+
+    <form method="POST" action="/users/voucherdata/create/post">
+        <div class="form-group">
+            <label>Voucher name:</label>
+            <input type="text" class="form-control-plaintext control-inline my-inpyt-text" id="voucher"
+                placeholder="Enter name voucher" name="voucher" required />
+        </div>
+        <div class="form-group">
+            <label>Bus route ID:</label>
+            <input type="text" class="form-control-plaintext control-inline my-inpyt-text" autocomplete="off"
+                id="fromInputM" placeholder="Enter route id" name="busrouteid" required>
+        </div>
+
+        <div class="form-group">
+            <label>Time start:</label>
+            <div class="form-group">
+                <input name="timestart" data-timepicker="true" placeholder="Input time start" id="timestart" type="text"
+                    class="datepicker-here form-control" data-language='en' data-multiple-dates="1"
+                    data-position='top left' required />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Time end:</label>
+            <div class="form-group">
+                <input name="timeend" data-timepicker="true" placeholder="Input time end" id="timeend" type="text"
+                    class="datepicker-here form-control" data-language='en' data-multiple-dates="1"
+                    data-position='top left' required />
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label>Discount:</label>
+            <input type="number" class="form-control-plaintext control-inline my-inpyt-text" autocomplete="off"
+                id="toInputM" placeholder="Enter discount (%)" name="discount" required>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a href="/users/voucherdata" class="btn btn-secondary">Cancel</a>
+    </form>
+
+
+
+</div>
+
+<script src="/js/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<link href="/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+<script src="/dist/js/datepicker.min.js"></script>
+<!-- Include English language -->
+<script src="/dist/js/i18n/datepicker.en.js"></script>
+
+<script src="/js/handlebars-v4.1.2.js"></script>
+<script src="/js/a1.js"></script>
+<script src="/js/create.js"></script>

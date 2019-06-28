@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "cong",
+    "database": "xebookingdb",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },  
+  "production": {
+    "username": "rihgohzhkeskbs",
+    "password": "33315d2b61850e5026e3a03e0b78e83653ce05c2c52e87414e0e0d9d930a78cc",
+    "database": "d6im0eb4jvgtkn",
+    "host": "ec2-54-83-36-37.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions":{
+      "ssl":true
+    }
+  }
+}

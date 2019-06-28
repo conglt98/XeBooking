@@ -1,0 +1,37 @@
+<form style="width: 100%" action="/search"onsubmit="DoSubmit();">
+<div class="container justify-content-center align-content-center p-2 mb-0" id="searchform">
+    <div class="align-items-center justify-content-center row"><p style="font-size: 26px;" class='mb-0'>Find your bus</p></div>
+    <div id="searchform-row-div-form" class="row align-items-center justify-content-center pl-4 pr-4">
+        <div class="col-md-1 col-sm-0"></div>
+        <div class="col-md-2 col-sm-4 mb-3">
+            <input id="fromInput" autocomplete="off" name="xuatphatId" type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                placeholder="From">
+        </div>
+        <i id="swapbutton" style="margin:auto 2px" class="fas fa-exchange-alt" aria-hidden="true"></i>
+        <div class="col-md-2 col-sm-4">
+            <input id="toInput" autocomplete="off" name="ketthucId" type="text" class="form-control-plaintext control-inline my-inpyt-text"
+                placeholder="To">
+        </div>
+        <div class="col-md-3 col-sm-4">
+            <div class="input-date m-0">
+                <!-- <label class="form-check-label" for="bday">Departure Day</label> -->
+                <input placeholder="Departure Day" id="searchform-departureday" type="text"
+                    class="datepicker-here my-date-time-picker form-control" data-language='en'
+                    data-position='bottom right' name="ngayKhoiHanh" autocomplete="off" required />
+                <i class="far fa-calendar-alt icon-date m-auto"></i>
+            </div>
+        </div>
+        
+        <div class="col-lg-2 col-m-2 col-sm-5 d-flex justify-content-center">
+            <button  id="searchform-search-button" class="btn btn-primary w-100"  type="submit">Search</a>
+
+        </div>
+    </div>
+    <script src="dist/js/i18n/datepicker.en.js"></script>
+    <script src="dist/js/datepicker.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/search.js"></script>
+
+
+</div>
+</form>

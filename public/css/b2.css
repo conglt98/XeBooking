@@ -1,0 +1,27 @@
+.b1-current {
+    float: left;
+    margin-left: 27px;
+    width: 45%;
+    height: 2%;
+    border-bottom: 3px solid #494949;
+    position: relative;
+}
+.b1-title-left {
+    
+    color: #494949;
+}
+
+.b1-title-right {
+   color: #999999;
+
+}
+
+input[type=text],
+input[type=password] {
+
+    margin-top: 6px;
+}
+
+.b1-form {
+    padding-bottom: 5px !important;
+}
