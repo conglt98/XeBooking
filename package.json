@@ -36,7 +36,7 @@
     "pg-hstore": "^2.3.3",
     "popper.js": "^1.15.0",
     "pretty-checkbox": "^3.0.3",
-    "sequelize": "^5.8.9",
+    "sequelize": "^5.15.1",
     "sequelize-cli": "^5.5.0",
     "sharp": "^0.22.1"
   },
