@@ -38,7 +38,7 @@
     "pretty-checkbox": "^3.0.3",
     "sequelize": "^5.8.9",
     "sequelize-cli": "^5.5.0",
-    "sharp": "^0.22.1"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "ws": "3.3.2"
